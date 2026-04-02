@@ -22,7 +22,7 @@
     position: relative;
   }
 
-  /* Decorative sun */
+  /* солнце (декор) */
   .sun {
     position: absolute;
     top: 30px; right: 60px;
@@ -34,7 +34,7 @@
   }
   @keyframes pulse { 0%,100%{box-shadow:0 0 0 12px rgba(255,213,79,0.3),0 0 0 24px rgba(255,213,79,0.15)} 50%{box-shadow:0 0 0 18px rgba(255,213,79,0.3),0 0 0 36px rgba(255,213,79,0.12)} }
 
-  /* Floating clouds */
+  /* облака */
   .cloud {
     position: absolute;
     background: white;
@@ -55,11 +55,11 @@
   .c2::after  { width:28px;height:28px;top:-12px;left:38px; }
   @keyframes drift { from{transform:translateX(-200px)} to{transform:translateX(120vw)} }
 
-  /* Grass decoration */
+  /* земля */
   .grass { position:absolute;bottom:0;left:0;right:0;height:60px;background:#7cb568;border-radius:60% 60% 0 0 / 30px; }
   .grass::before { content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:#5a9e4a; }
 
-  /* Card */
+  /* карточка */
   .card {
     background: rgba(255,255,255,0.92);
     border-radius: 28px;
@@ -100,7 +100,7 @@
   .step-title { font-family:'Pacifico',cursive; font-size:20px; color:#2e7d32; text-align:center; margin-bottom:4px; }
   .step-hint { font-size:12px; color:#aaa; text-align:center; margin-bottom:20px; }
 
-  /* Options grid */
+  /* Варианты */
   .options { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:10px; margin-bottom:24px; }
   .opt {
     border: 2px solid #e0e0e0;
@@ -182,9 +182,9 @@
   <div class="cloud c2"></div>
 
   <div class="card">
-    <div class="flowers">🌸 🌼 🌺 🌸</div>
+    <div class="flowers">🌷 🌼 🌺 🌷</div>
     <div class="logo">🧺 Picnic Menu</div>
-    <div class="logo-sub">pick your perfect basket</div>
+    <div class="logo-sub">pick your perfect basket sweetie</div>
 
     <div class="progress-wrap" id="progress"></div>
 
@@ -230,8 +230,8 @@
       <div class="step-title">Joint? 🌿</div>
       <div class="step-hint">the most important question</div>
       <div class="yn-wrap">
-        <div class="yn-btn yn-yes" onclick="selectYN('yes')">😌 Yes please</div>
-        <div class="yn-btn yn-no"  onclick="selectYN('no')">😇 No thanks</div>
+        <div class="yn-btn yn-yes" onclick="selectYN('yes')">😌 Yes</div>
+        <div class="yn-btn yn-no"  onclick="selectYN('no')">😇 No</div>
       </div>
       <button class="btn-next" id="btn-4" disabled onclick="next(4)">See my menu ✨</button>
     </div>
@@ -239,7 +239,7 @@
     <!-- Summary -->
     <div class="step" id="step-5">
       <div class="summary-title">Your picnic basket 🧺</div>
-      <div class="summary-sub">here's everything you picked!</div>
+      <div class="summary-sub">Please screenshot this to me😉!</div>
       <div id="summary-body"></div>
       <button class="btn-restart" onclick="restart()">🔄 Start over</button>
     </div>
@@ -274,7 +274,7 @@ const steps = [
     max: 2,
     items: [
       { e:'☕', l:'Tiramisu' },
-      { e:'🤍', l:'"You"' },
+      { e:'💜', l:'"You)"' },
       { e:'🎂', l:'Cake' },
       { e:'🥐', l:'Nutella croissants' },
       { e:'🧇', l:'Waffles' },
