@@ -59,6 +59,21 @@
   .grass { position:absolute;bottom:0;left:0;right:0;height:60px;background:#7cb568;border-radius:60% 60% 0 0 / 30px; }
   .grass::before { content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:#5a9e4a; }
 
+  /* тюльпаны */
+  .tulips { position:absolute;bottom:50px;left:0;right:0;display:flex;justify-content:space-around;padding:0 20px;z-index:2;pointer-events:none; }
+  .tulip { display:flex;flex-direction:column;align-items:center; animation: sway 3s ease-in-out infinite; }
+  .tulip:nth-child(2) { animation-delay:0.4s; }
+  .tulip:nth-child(3) { animation-delay:0.8s; }
+  .tulip:nth-child(4) { animation-delay:0.2s; }
+  .tulip:nth-child(5) { animation-delay:1s; }
+  .tulip:nth-child(6) { animation-delay:0.6s; }
+  .tulip:nth-child(7) { animation-delay:1.3s; }
+  .tulip:nth-child(8) { animation-delay:0.9s; }
+  @keyframes sway { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+  .tulip-head { width:14px;height:18px;border-radius:50% 50% 40% 40%;margin-bottom:-2px; }
+  .tulip-stem { width:3px;height:28px;background:#4a8c2a;border-radius:2px; }
+  .tulip-leaf { width:10px;height:14px;background:#5aa82e;border-radius:50% 0 50% 0;position:absolute;margin-top:14px;margin-left:3px; }
+
   /* карточка */
   .card {
     background: rgba(255,255,255,0.92);
@@ -245,6 +260,16 @@
     </div>
   </div>
 
+  <div class="tulips">
+    <div class="tulip"><div class="tulip-head" style="background:#e74c8b"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#ff6b35"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#f7c331"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#c0392b"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#9b59b6"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#e74c8b"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#ff6b35"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+    <div class="tulip"><div class="tulip-head" style="background:#f7c331"></div><div style="position:relative"><div class="tulip-leaf"></div><div class="tulip-stem"></div></div></div>
+  </div>
   <div class="grass"></div>
 </div>
 
@@ -370,7 +395,7 @@ function renderSummary() {
     { cat:'Fruits',    icon:'🍓', val: selections[1].map(i=>steps[1].items[i].e+' '+steps[1].items[i].l).join(', ') },
     { cat:'Desserts',  icon:'🍰', val: selections[2].map(i=>steps[2].items[i].e+' '+steps[2].items[i].l).join(', ') },
     { cat:'Drinks',    icon:'🥤', val: selections[3].map(i=>steps[3].items[i].e+' '+steps[3].items[i].l).join(', ') },
-    { cat:'Joint 🌿',  icon:'🌿', val: selections[4]==='yes'?'😌 Yes please':'😇 No thanks' },
+    { cat:'Joint 🌿',  icon:'🌿', val: selections[4]==='yes'?'😌 Yes':'😇 No' },
   ];
   document.getElementById('summary-body').innerHTML = summaryData.map(r=>
     `<div class="summary-row">
